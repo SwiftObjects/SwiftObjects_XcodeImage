@@ -30,4 +30,10 @@ class ___FILEBASENAME___ : WOComponent {
         // has been processed.
         super.sleep()
     }
+    
+  #if false
+    func handlePostAction() -> Any? {
+      return nil // nil means: stay on page, you can also return a new!
+    }
+  #endif
 }

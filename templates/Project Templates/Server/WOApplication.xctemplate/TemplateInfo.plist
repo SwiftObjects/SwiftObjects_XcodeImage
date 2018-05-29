@@ -47,20 +47,31 @@
     <key>Nodes</key>
     <array>
       <string>Package.swift:spmpackagedecl:deps:SwiftNIO(url: "https://github.com/apple/swift-nio.git", 
-                 from: "1.7.1")</string>
+                 from: "1.7.2")</string>
+      <string>Package.swift:spmpackagedecl:deps:SemanticUI(url: "https://github.com/SwiftWebResources/SemanticUI-Swift.git", 
+                 from: "2.3.1")</string>
+      <string>Package.swift:spmpackagedecl:deps:jQuery(url: "https://github.com/SwiftWebResources/jQuery-Swift.git", 
+                 from: "3.3.1")</string>
+   <!--
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
-                 from: "1.7.1")</string>
+                 from: "1.7.2")</string>
+-->
+     <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "git@github.com:helje5/SwiftObjects.git", 
+                .branch("master"))</string> <!-- FIXME -->
+    
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
+      <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
+      <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
       <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
       
       <string>Sources/___PACKAGENAME___/Application.swift</string>
       <string>Sources/___PACKAGENAME___/Context.swift</string>
       <string>Sources/___PACKAGENAME___/Session.swift</string>
       
-      <string>Sources/___PACKAGENAME___/Main.swift</string>
-      <string>Sources/___PACKAGENAME___/Main.html</string>
-      <string>Sources/___PACKAGENAME___/Main.wod</string>
-      <string>Sources/___PACKAGENAME___/Frame.html</string>
+      <string>Sources/___PACKAGENAME___/Components/Main.swift</string>
+      <string>Sources/___PACKAGENAME___/Components/Main.html</string>
+      <string>Sources/___PACKAGENAME___/Components/Main.wod</string>
+      <string>Sources/___PACKAGENAME___/Components/Frame.html</string>
 
       <string>Sources/___PACKAGENAME___/DirectAction.swift</string>
       
@@ -72,6 +83,12 @@
 
     <key>Definitions</key>
     <dict>
+      <key>Sources/___PACKAGENAME___/main.swift</key>
+      <dict>
+        <key>Group</key><array><string>Application</string></array>
+        <key>Path</key><string>MainEntry.swift</string>
+      </dict>
+      
       <key>Sources/___PACKAGENAME___/Application.swift</key>
       <dict>
         <key>Group</key><array><string>Application</string></array>
@@ -88,23 +105,23 @@
         <key>Path</key><string>Session.swift</string>
       </dict>
       
-      <key>Sources/___PACKAGENAME___/Main.swift</key>
+      <key>Sources/___PACKAGENAME___/Components/Main.swift</key>
       <dict>
         <key>Group</key><array><string>Components</string></array>
         <key>Path</key><string>Main.swift</string>
       </dict>
-      <key>Sources/___PACKAGENAME___/Main.html</key>
+      <key>Sources/___PACKAGENAME___/Components/Main.html</key>
       <dict>
         <key>Group</key><array><string>Components</string></array>
         <key>Path</key><string>Main.html</string>
       </dict>
-      <key>Sources/___PACKAGENAME___/Main.wod</key>
+      <key>Sources/___PACKAGENAME___/Components/Main.wod</key>
       <dict>
         <key>Group</key><array><string>Components</string></array>
         <key>Path</key><string>Main.wod</string>
       </dict>
 
-      <key>Sources/___PACKAGENAME___/Frame.html</key>
+      <key>Sources/___PACKAGENAME___/Components/Frame.html</key>
       <dict>
         <key>Group</key><array><string>Components</string></array>
         <key>Path</key><string>Frame.swift</string>

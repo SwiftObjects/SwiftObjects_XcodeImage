@@ -27,10 +27,12 @@ let package = Package(
                  from: "2.3.1"),
         .package(url: "https://github.com/SwiftWebResources/jQuery-Swift.git",
                  from: "3.3.1"),
-        runtimeLib
+        runtimeLib,
+        .package(url: "git@github.com:helje5/SwiftObjects.git",
+                 .branch("master")) // FIXME
     ],
     targets: [
-        .target(name: "SwiftObjects_XcodeObject", 
+        .target(name: "SwiftObjects_XcodeImage", 
                 dependencies: [ 
                     /* Add your target dependencies in here, e.g.: */
                     // "cows",
@@ -39,7 +41,10 @@ let package = Package(
                     "NIOFoundationCompat",
                     "NIOConcurrencyHelpers",
                     "SwiftHash",
-                    "Runtime"
+                    "Runtime",
+                    "SwiftObjects",
+                    "SemanticUI",
+                    "jQuery"
                 ])
     ]
 )

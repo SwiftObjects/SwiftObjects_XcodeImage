@@ -34,14 +34,3 @@ final class Main : WOComponent {
         super.sleep()
     }
 }
-
-
-// MARK: - Server Setup
-
-// That this is in here is to please Swift Package Manager, which expects
-// the main code in `main.swift` :-)
-// The code below starts the NIO HTTP server and runs our application.
-
-let WOApp  = Application()
-let server = WONIOAdaptor(application: WOApp)
-server.listenAndWait()
