@@ -124,7 +124,7 @@
       <key>Sources/___PACKAGENAME___/Components/Frame.html</key>
       <dict>
         <key>Group</key><array><string>Components</string></array>
-        <key>Path</key><string>Frame.swift</string>
+        <key>Path</key><string>Frame.html</string>
       </dict>
 
       <key>Sources/___PACKAGENAME___/DirectAction.swift</key>
