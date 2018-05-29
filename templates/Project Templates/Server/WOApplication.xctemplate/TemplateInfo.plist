@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Kind</key>
+    <string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+    
+    <key>Identifier</key>
+    <string>de.zeezide.dt.unit.swiftxcode.images.swift.swiftobjects</string>
+
+    <key>Ancestors</key>
+    <array>
+      <string>de.zeezide.dt.unit.spmToolBase</string>
+    </array>
+
+    <key>Concrete</key>
+    <true/>
+
+    <key>Description</key>
+    <string>This template provides a starting point for building SwiftObjects web applications.</string>
+    
+    <key>Targets</key>
+    <array>
+      <dict>
+        <key>ProductType</key>
+        <string>com.apple.product-type.tool</string>
+        <key>TargetIdentifier</key>
+        <string>com.apple.dt.commandLineToolTarget</string>
+
+        <key>BuildPhases</key>
+        <array>
+          <dict>
+            <key>SortOrder</key><integer>0</integer>
+            <key>Name</key>
+            <string>Build Swift Package Manager Dependencies</string>
+            <key>Class</key>      <string>ShellScript</string>
+            <key>ShellPath</key>  <string>/bin/sh</string>
+            <key>ShellScript</key>
+            <string>SPM_IMAGE=SwiftObjects verbose=no swift xcode build</string>
+          </dict>
+          <dict><key>Class</key><string>Sources</string>   </dict>
+          <dict><key>Class</key><string>Frameworks</string></dict>
+        </array>
+      </dict>
+    </array>
+    
+    <key>Nodes</key>
+    <array>
+      <string>Package.swift:spmpackagedecl:deps:SwiftNIO(url: "https://github.com/apple/swift-nio.git", 
+                 from: "1.7.1")</string>
+      <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
+                 from: "1.7.1")</string>
+      <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
+      <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
+      
+      <string>Sources/___PACKAGENAME___/Application.swift</string>
+      <string>Sources/___PACKAGENAME___/Context.swift</string>
+      <string>Sources/___PACKAGENAME___/Session.swift</string>
+      
+      <string>Sources/___PACKAGENAME___/Main.swift</string>
+      <string>Sources/___PACKAGENAME___/Main.html</string>
+      <string>Sources/___PACKAGENAME___/Main.wod</string>
+      <string>Sources/___PACKAGENAME___/Frame.html</string>
+
+      <string>Sources/___PACKAGENAME___/DirectAction.swift</string>
+      
+      <string>Sources/___PACKAGENAME___/favicon.ico</string>
+    </array>
+    
+    
+    <!-- ***************************************************** -->
+
+    <key>Definitions</key>
+    <dict>
+      <key>Sources/___PACKAGENAME___/Application.swift</key>
+      <dict>
+        <key>Group</key><array><string>Application</string></array>
+        <key>Path</key><string>Application.swift</string>
+      </dict>
+      <key>Sources/___PACKAGENAME___/Context.swift</key>
+      <dict>
+        <key>Group</key><array><string>Application</string></array>
+        <key>Path</key><string>Context.swift</string>
+      </dict>
+      <key>Sources/___PACKAGENAME___/Session.swift</key>
+      <dict>
+        <key>Group</key><array><string>Application</string></array>
+        <key>Path</key><string>Session.swift</string>
+      </dict>
+      
+      <key>Sources/___PACKAGENAME___/Main.swift</key>
+      <dict>
+        <key>Group</key><array><string>Components</string></array>
+        <key>Path</key><string>Main.swift</string>
+      </dict>
+      <key>Sources/___PACKAGENAME___/Main.html</key>
+      <dict>
+        <key>Group</key><array><string>Components</string></array>
+        <key>Path</key><string>Main.html</string>
+      </dict>
+      <key>Sources/___PACKAGENAME___/Main.wod</key>
+      <dict>
+        <key>Group</key><array><string>Components</string></array>
+        <key>Path</key><string>Main.wod</string>
+      </dict>
+
+      <key>Sources/___PACKAGENAME___/Frame.html</key>
+      <dict>
+        <key>Group</key><array><string>Components</string></array>
+        <key>Path</key><string>Frame.swift</string>
+      </dict>
+
+      <key>Sources/___PACKAGENAME___/DirectAction.swift</key>
+      <dict>
+        <key>Group</key><array><string>DirectActions</string></array>
+        <key>Path</key><string>DirectAction.swift</string>
+      </dict>
+      
+      <key>Sources/___PACKAGENAME___/favicon.ico</key>
+      <dict>
+        <key>Group</key><array><string>WebServerResources</string></array>
+        <key>Path</key><string>favicon.ico</string>
+      </dict>
+    </dict>
+
+
+    <!-- *************** OPTIONS ********************************* -->
+
+  </dict>
+</plist>

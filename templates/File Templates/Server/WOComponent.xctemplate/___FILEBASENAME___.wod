@@ -1,0 +1,22 @@
+//___FILEHEADER___
+//
+// The .wod file is not strictly required in SwiftObjects. The bindings can
+// also be directly attached to the elements in the .html template.
+// But if you want, you can separate them out.
+// 
+// The format is the element name, followed by its class (consider it the
+// "UIView" being used, in here either a WODynamicElement or a WOComponent),
+// and then a basic "old-style" properly list.
+
+Title: WOString {
+    value = title; // this binds the `title` ivar of the component
+}
+
+Body: WOString { // just a static string
+    value = "Proactively initiate diverse action items whereas inexpensive 
+             bandwidth. Distinctively disseminate e-business content rather than
+             fully researched core competencies. Efficiently provide access to
+             compelling core competencies through multimedia based results.
+             Distinctively cultivate maintainable collaboration and idea-sharing
+             via sticky scenarios.";
+}
