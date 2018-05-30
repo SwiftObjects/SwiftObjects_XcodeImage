@@ -28,8 +28,8 @@ let package = Package(
         .package(url: "https://github.com/SwiftWebResources/jQuery-Swift.git",
                  from: "3.3.1"),
         runtimeLib,
-        .package(url: "git@github.com:helje5/SwiftObjects.git",
-                 .branch("master")) // FIXME
+        .package(url: "https://github.com/SwiftObjects/SwiftObjects.git",
+                 .branch("develop")) // FIXME
     ],
     targets: [
         .target(name: "SwiftObjects_XcodeImage", 

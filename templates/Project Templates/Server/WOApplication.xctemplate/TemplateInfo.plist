@@ -54,10 +54,10 @@
                  from: "3.3.1")</string>
    <!--
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
-                 from: "1.7.2")</string>
--->
-     <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "git@github.com:helje5/SwiftObjects.git", 
-                .branch("master"))</string> <!-- FIXME -->
+                 from: "0.5.0")</string>
+     -->
+     <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
+                .branch("develop"))</string> <!-- FIXME -->
     
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
