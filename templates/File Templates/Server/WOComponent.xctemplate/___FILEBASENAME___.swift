@@ -10,7 +10,7 @@ import SwiftObjects
  * contains the actual UI. Which is bound to the component using the Main.wod
  * file.
  */
-class ___FILEBASENAME___ : WOComponent {
+final class ___FILEBASENAME___ : WOComponent {
   
     /// Variables can be accessed using KVC. Check out the `Main.wod` file
     /// to see how this is bound to the UI.
