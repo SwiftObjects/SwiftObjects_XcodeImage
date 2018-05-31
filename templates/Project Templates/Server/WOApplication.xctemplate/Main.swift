@@ -22,9 +22,32 @@ final class Main : WOComponent {
     override func awake() {
         super.awake()
       
-        // Use this to expose your methods
-      #if false
+        // Use this to expose your methods, only necessary until Swift gains
+        // proper reflection :-)
         expose(handlePostAction, as: "handlePost")
+    }
+    
+    
+    // An action (which can be invoked from WOHyperlink, WOSubmitButton etc)
+    // is just a method with no arguments and a result. It can return nil
+    // if a component wants to stay on the same page (just rerender with the
+    // same state).
+    // If the request was something like a form-POST, the developer does NOT
+    // have to extract variables manually! Before the action is called, the
+    // template will have pushed the form values into the variables in the
+    // .wod file!
+    func handlePostAction() -> Any? {
+      #if true // We can return nil to stay on the same page, 
+        return nil
+      #else     // or we can return a new page.
+        let nextPage = pageWithName("CustomerList")
+        // or just `let nextPage = CustomerList()`
+        
+        // you can push variables into the page, similar to what you would do
+        // on iOS when transitioning to a new UIViewController.
+        nextPage.message = "User blub was added sucessfully"        
+        
+        return nextPage
       #endif
     }
     
