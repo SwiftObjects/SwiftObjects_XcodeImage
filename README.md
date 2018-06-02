@@ -22,10 +22,31 @@ swift xcode link-templates # <-- important!
 
 ### Use within Xcode
 
-1. Create new project (Command-Shift-N or File/New/Project ...)
-2. choose macOS / Server / WOApplication template
-3. check desired options
-4. build and run, and then have fun!
+Within Xcode, create a new project (⌘-Shift-N),
+go to the "macOS" section and select the "WOApplication"
+template, very much at the bottom of the inspector
+(pro tip: type "wo" in the filter field at the upper right):
+
+<center><img src=
+  "http://www.alwaysrightinstitute.com/images/swiftobjects/01-so-create-project-1.png" 
+  /></center>
+
+Give your project a name, say "HelloWOrld" create it somewhere, and you should
+end up with something like this:
+
+<center><img src=
+  "http://www.alwaysrightinstitute.com/images/swiftobjects/05-so-create-project-5.png" 
+  /></center>
+  
+Press the Play/Run button to build and start the application. Open your
+favorite browser and navigate to
+[http://localhost:1337/](http://localhost:1337/):
+
+<center><img src=
+  "http://www.alwaysrightinstitute.com/images/swiftobjects/21-main-page.png" 
+  /></center>
+
+Yay. History is up and running!
 
 
 ### Who
