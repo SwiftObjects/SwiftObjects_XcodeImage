@@ -29,7 +29,7 @@ let package = Package(
                  from: "3.3.1"),
         runtimeLib,
         .package(url: "https://github.com/SwiftObjects/SwiftObjects.git",
-                 .branch("develop")) // FIXME 
+                 .from: "0.5.0")
     ],
     targets: [
         .target(name: "SwiftObjects_XcodeImage", 
