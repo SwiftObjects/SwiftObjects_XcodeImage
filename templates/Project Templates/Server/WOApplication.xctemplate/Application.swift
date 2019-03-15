@@ -18,32 +18,32 @@ import SemanticUI
  */
 final class Application : WOApplication {
 
-  override init() {
-    super.init()
+    override init() {
+        super.init()
     
-    // Make SwiftObjects use our own subclasses.
-    contextClass = Context.self
-    sessionClass = Session.self
+        // Make SwiftObjects use our own subclasses.
+        contextClass = Context.self
+        sessionClass = Session.self
     
-    // The resource manager maintains all resources, that is, templates,
-    // components, images, etc.
-    let rm = WODevResourceManager(sourceType: Application.self,
-                                  defaultFramework: "___PACKAGENAMEASIDENTIFIER___")
+        // The resource manager maintains all resources, that is, templates,
+        // components, images, etc.
+        let rm = WODevResourceManager(sourceType: Application.self,
+                                      defaultFramework: "___PACKAGENAMEASIDENTIFIER___")
 
-    // Here we need to tell the resource manager about our classes.
-    // Note: `Frame` is missing here, because it is a component w/o an explicit
-    //       class.
-    rm.register(Session.self,
-                Context.self,
-                DirectAction.self,
-                Main.self)
+        // Here we need to tell the resource manager about our classes.
+        // Note: `Frame` is missing here, because it is a component w/o an 
+        //       explicit class.
+        rm.register(Session.self,
+                    Context.self,
+                    DirectAction.self,
+                    Main.self)
     
-    // We also expose some useful SwiftWebResources
-    rm.expose(.init("jQuery.min.js",    jQuery.data_jquery_min_js),
-              .init("semantic.min.js",  SemanticUI.data_semantic_min_js),
-              .init("semantic.min.css", SemanticUI.data_semantic_min_css))
+        // We also expose some useful SwiftWebResources
+        rm.expose(.init("jQuery.min.js",    jQuery.data_jquery_min_js),
+                  .init("semantic.min.js",  SemanticUI.data_semantic_min_js),
+                  .init("semantic.min.css", SemanticUI.data_semantic_min_css))
 
-    // Tell SwiftObjects to use the resource manager we just created.    
-    resourceManager = rm
-  }
+        // Tell SwiftObjects to use the resource manager we just created.    
+        resourceManager = rm
+    }
 }

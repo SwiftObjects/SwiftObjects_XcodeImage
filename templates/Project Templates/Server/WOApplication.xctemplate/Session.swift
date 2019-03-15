@@ -7,15 +7,15 @@ import SwiftObjects
  */
 final class Session : WOSession {
 
-  override func awake() {
-    super.awake()
+    override func awake() {
+        super.awake()
     
-    // in here code can be added when a session is activated.
-  }
+        // in here code can be added when a session is activated.
+    }
   
-  override func sleep() {
-    // in here code can be added that should run before a session persists.
+    override func sleep() {
+        // in here code can be added that should run before a session persists.
     
-    super.sleep()
-  }
+        super.sleep()
+    }
 }
