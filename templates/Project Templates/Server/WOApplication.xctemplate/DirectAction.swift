@@ -29,7 +29,7 @@ final class DirectAction : WODirectAction {
         // expose(handlePost, as: "handlePost")
     }
     
-    override open func defaultAction() -> WOActionResults? {
+    override func defaultAction() -> WOActionResults? {
         // This is already defined in WODirectAction, but you may chose
         // to do something else.
         return pageWithName("Main")
