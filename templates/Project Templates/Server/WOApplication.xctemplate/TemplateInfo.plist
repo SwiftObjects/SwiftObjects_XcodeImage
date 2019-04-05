@@ -47,13 +47,13 @@
     <key>Nodes</key>
     <array>
       <string>Package.swift:spmpackagedecl:deps:SwiftNIO(url: "https://github.com/apple/swift-nio.git", 
-                 from: "1.13.2")</string>
+                 from: "2.0.0")</string>
       <string>Package.swift:spmpackagedecl:deps:SemanticUI(url: "https://github.com/SwiftWebResources/SemanticUI-Swift.git", 
                  from: "2.3.1")</string>
       <string>Package.swift:spmpackagedecl:deps:jQuery(url: "https://github.com/SwiftWebResources/jQuery-Swift.git", 
                  from: "3.3.1")</string>
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
-                 from: "0.5.4")</string>
+                 from: "0.6.0")</string>
                  
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>

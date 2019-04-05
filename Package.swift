@@ -1,19 +1,9 @@
-// swift-tools-version:4.2
+// swift-tools-version:5.0
 import PackageDescription
 
-#if swift(>=4.2)
-    let runtimeLib : PackageDescription.Package.Dependency =
-                     .package(url: "https://github.com/wickwirew/Runtime.git",
-                              from: "1.1.0")
-#elseif swift(>=4.1)
-    let runtimeLib : PackageDescription.Package.Dependency =
-                     .package(url: "https://github.com/SwiftObjects/Runtime.git",
-                              from: "41.0.0")
-#else
-    let runtimeLib : PackageDescription.Package.Dependency =
-                     .package(url: "https://github.com/SwiftObjects/Runtime.git",
-                              from: "40.0.0")
-#endif
+let runtimeLib: PackageDescription.Package.Dependency =
+                .package(url: "https://github.com/wickwirew/Runtime.git",
+                         .branch("swift5"))
 
 let package = Package(
     name: "SwiftObjects_XcodeImage",
@@ -24,7 +14,7 @@ let package = Package(
                  from: "1.0.0"),
         */
         .package(url: "https://github.com/apple/swift-nio.git",
-                 from: "1.13.2"),
+                 from: "2.0.0"),
         .package(url: "https://github.com/onmyway133/SwiftHash.git",
                  from: "2.0.2"),
         .package(url: "https://github.com/SwiftWebResources/SemanticUI-Swift.git",
@@ -33,7 +23,7 @@ let package = Package(
                  from: "3.3.1"),
         runtimeLib,
         .package(url: "https://github.com/SwiftObjects/SwiftObjects.git",
-                 from: "0.5.4")
+                 from: "0.6.0")
     ],
     targets: [
         .target(name: "SwiftObjects_XcodeImage", 
