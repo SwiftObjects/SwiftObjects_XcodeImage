@@ -18,7 +18,9 @@ let package = Package(
         .package(url: "https://github.com/SwiftWebResources/jQuery-Swift.git",
                  from: "3.3.2"),
         .package(url: "https://github.com/SwiftObjects/SwiftObjects.git",
-                 from: "0.6.1")
+                 from: "0.6.1"),
+        .package(url: "https://github.com/ZeeQL/ZeeQL3.git",
+                 from: "0.7.0")
     ],
     targets: [
         .target(name: "SwiftObjects_XcodeImage", 
@@ -32,7 +34,8 @@ let package = Package(
                     "SwiftHash",
                     "SwiftObjects",
                     "SemanticUI",
-                    "jQuery"
+                    "jQuery",
+                    "ZeeQL"
                 ])
     ]
 )

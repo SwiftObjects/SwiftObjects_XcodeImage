@@ -54,6 +54,8 @@
                  from: "3.3.1")</string>
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
                  from: "0.6.1")</string>
+      <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/ZeeQL/ZeeQL3.git", 
+                 from: "0.7.0")</string>
                  
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
@@ -138,6 +140,7 @@
 
 
     <!-- *************** OPTIONS ********************************* -->
+    <!-- TODO: make ZeeQL an option, not a direct link -->
 
   </dict>
 </plist>
