@@ -56,12 +56,15 @@
                  from: "0.6.1")</string>
       <string>Package.swift:spmpackagedecl:deps:ZeeQL(url: "https://github.com/ZeeQL/ZeeQL3.git", 
                  from: "0.7.0")</string>
+      <string>Package.swift:spmpackagedecl:deps:SwiftObjectsZeeQLBridge(url: "https://github.com/SwiftObjects/SwiftObjectsZeeQLBridge.git",
+	         from: "0.1.0")</string>
                  
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
       <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
       <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
       <string>Package.swift:spmpackagedecl:targets:default:ZeeQL</string>
+      <string>Package.swift:spmpackagedecl:targets:default:SwiftObjectsZeeQLBridge</string>
       
       <string>Sources/___PACKAGENAME___/Application.swift</string>
       <string>Sources/___PACKAGENAME___/Context.swift</string>
