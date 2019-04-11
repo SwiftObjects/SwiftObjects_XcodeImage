@@ -60,7 +60,7 @@
       <string>Sources/___PACKAGENAME___/Application.swift:header</string>
       <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SwiftObjects</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass</string>
-      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:body</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:ivars</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:beforesuper</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:super</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:defaultclasses</string>
@@ -276,7 +276,7 @@ final class Application : WOApplication {</string>
         <key>Description</key>
         <string>Add the EOF/CoreData like ZeeQL module.</string>
         
-        <key>SortOrder</key>    <integer>21</integer>
+        <key>SortOrder</key>    <integer>31</integer>
         <key>Type</key>         <string>checkbox</string>
         <key>Default</key>      <string>true</string>
         <key>NotPersisted</key> <true/>
@@ -303,6 +303,53 @@ final class Application : WOApplication {</string>
                 <string>Sources/___PACKAGENAME___/Components/Main.swift:imports:import:ZeeQL</string>
                 <string>Sources/___PACKAGENAME___/DirectAction.swift:imports:import:ZeeQL</string>
               </array>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <dict>
+        <key>Identifier</key>   <string>zzZeeQLSQLiteDemo</string>
+        <key>Name</key>         <string>Setup SQLite3 demo database.</string>
+        <key>Description</key>
+        <string>Setup a sample SQLite configuration.</string>
+        
+        <key>SortOrder</key>    <integer>35</integer>
+        <key>Type</key>         <string>checkbox</string>
+        <key>Default</key>      <string>true</string>
+        <key>NotPersisted</key> <true/>
+        
+        <key>Units</key>
+        <dict>
+          <key>true</key>
+          <array>
+            <dict>
+              <key>Nodes</key>
+              <array>
+                <string>Sources/___PACKAGENAME___/contacts.sqlite3</string>
+                <string>Sources/___PACKAGENAME___/Application.swift:woappclass:ivars:ivar:database</string>
+                <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:beforesuper</string>
+              </array>
+              <key>Definitions</key>
+              <dict>
+                <key>Sources/___PACKAGENAME___/contacts.sqlite3</key>
+                <dict>
+                  <key>Group</key><array><string>Databases</string></array>
+                  <key>Path</key><string>contacts.sqlite3</string>
+                </dict>
+                <key>Sources/___PACKAGENAME___/Application.swift:woappclass:ivars:ivar:database</key>
+                <string>
+    let database : Database</string>
+              </dict>
+              <key>*:woappclass:init:beforesuper</key>
+              <string>
+        let dbPath  = "contacts.sqlite3"
+        let adaptor = SQLite3Adaptor(dbPath)
+        self.db = Database(adaptor: adaptor)
+        if let model = (try? adaptor.fetchModel())
+                             .flatMap({ FancyModelMaker(model: $0).fancyfyModel() })
+        {
+            adaptor.model = model
+        }</string>
             </dict>
           </array>
         </dict>
