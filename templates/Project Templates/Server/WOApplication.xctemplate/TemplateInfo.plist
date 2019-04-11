@@ -59,6 +59,9 @@
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
       <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
       <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
+
+      <string>Sources/___PACKAGENAME___/main.swift:imports:import:SwiftObjects</string>
+      <string>Sources/___PACKAGENAME___/main.swift:body:appstart</string>
       
       <string>Sources/___PACKAGENAME___/Application.swift</string>
       <string>Sources/___PACKAGENAME___/Context.swift</string>
@@ -81,9 +84,14 @@
     <dict>
       <key>Sources/___PACKAGENAME___/main.swift</key>
       <dict>
+        <!-- need to differentiate between main.swift and the Main component -->
         <key>Group</key><array><string>Application</string></array>
         <key>Path</key><string>MainEntry.swift</string>
       </dict>
+      <key>Sources/___PACKAGENAME___/main.swift:body:appstart</key>
+      <string>let WOApp  = Application()
+let server = WONIOAdaptor(application: WOApp)
+server.listenAndWait()</string>
       
       <key>Sources/___PACKAGENAME___/Application.swift</key>
       <dict>
