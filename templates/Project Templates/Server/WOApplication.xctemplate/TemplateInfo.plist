@@ -63,7 +63,18 @@
       <string>Sources/___PACKAGENAME___/main.swift:imports:import:SwiftObjects</string>
       <string>Sources/___PACKAGENAME___/main.swift:body:appstart</string>
       
-      <string>Sources/___PACKAGENAME___/Application.swift</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:header</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SwiftObjects</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:jQuery</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SemanticUI</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:body</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:beforesuper</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:super</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:defaultclasses</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:resourcemanager</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:aftersuper</string>
+
       <string>Sources/___PACKAGENAME___/Context.swift</string>
       <string>Sources/___PACKAGENAME___/Session.swift</string>
       
@@ -98,6 +109,72 @@ server.listenAndWait()</string>
         <key>Group</key><array><string>Application</string></array>
         <key>Path</key><string>Application.swift</string>
       </dict>
+
+      <key>Sources/___PACKAGENAME___/Application.swift:header</key>
+      <string>//___FILEHEADER___
+</string>
+      
+      <key>*:woappclass</key>
+      <dict>
+        <key>Beginning</key>
+        <string>/**
+ * The application object is what the name suggests, it represents the
+ * application :-)
+ *
+ * It isn't the actual HTTP server (that is handled by the `WOAdaptor`),
+ * but it performs a variety of tasks, including request path handling,
+ * some session management, etc.
+ *
+ * *Important*: Due to missing reflection capabilities in Swift, you need
+ *              to explicitly expose the component classes you want to use!
+ *              As shown below in the init method.
+ */
+final class Application : WOApplication {</string>
+        <key>End</key>
+        <string>}</string>
+      </dict>
+      <key>*:woappclass:init</key>
+      <dict>
+        <key>Beginning</key>
+        <string>
+    override init() {</string>
+        <key>End</key>
+        <string>    }</string>
+      </dict>
+      <key>*:woappclass:init:beforesuper</key>
+      <string></string>
+      <key>*:woappclass:init:super</key>
+      <string>        super.init()</string>
+      <key>*:woappclass:init:defaultclasses</key>
+      <string>
+        // Make SwiftObjects use our own subclasses.
+        contextClass = Context.self
+        sessionClass = Session.self</string>
+      <key>*:woappclass:init:resourcemanager</key>
+      <string>
+        // The resource manager maintains all resources, that is, templates,
+        // components, images, etc.
+        let rm = WODevResourceManager(sourceType: Application.self,
+                                      defaultFramework: "___PACKAGENAMEASIDENTIFIER___")
+
+        // Here we need to tell the resource manager about our classes.
+        // Note: `Frame` is missing here, because it is a component w/o an 
+        //       explicit class.
+        rm.register(Session.self,
+                    Context.self,
+                    DirectAction.self,
+                    Main.self)
+    
+        // We also expose some useful SwiftWebResources
+        rm.expose(.init("jQuery.min.js",    jQuery.data_jquery_min_js),
+                  .init("semantic.min.js",  SemanticUI.data_semantic_min_js),
+                  .init("semantic.min.css", SemanticUI.data_semantic_min_css))
+
+        // Tell SwiftObjects to use the resource manager we just created.    
+        resourceManager = rm</string>
+      <key>*:woappclass:init:aftersuper</key>
+      <string></string>
+      
       <key>Sources/___PACKAGENAME___/Context.swift</key>
       <dict>
         <key>Group</key><array><string>Application</string></array>
