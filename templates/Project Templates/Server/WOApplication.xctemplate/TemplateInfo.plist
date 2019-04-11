@@ -48,16 +48,10 @@
     <array>
       <string>Package.swift:spmpackagedecl:deps:SwiftNIO(url: "https://github.com/apple/swift-nio.git", 
                  from: "2.0.0")</string>
-      <string>Package.swift:spmpackagedecl:deps:SemanticUI(url: "https://github.com/SwiftWebResources/SemanticUI-Swift.git", 
-                 from: "2.3.1")</string>
-      <string>Package.swift:spmpackagedecl:deps:jQuery(url: "https://github.com/SwiftWebResources/jQuery-Swift.git", 
-                 from: "3.3.1")</string>
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
                  from: "0.6.1")</string>
                  
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
-      <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
-      <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
       <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
 
       <string>Sources/___PACKAGENAME___/main.swift:imports:import:SwiftObjects</string>
@@ -65,8 +59,6 @@
       
       <string>Sources/___PACKAGENAME___/Application.swift:header</string>
       <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SwiftObjects</string>
-      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:jQuery</string>
-      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SemanticUI</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:body</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:init:beforesuper</string>
@@ -164,11 +156,6 @@ final class Application : WOApplication {</string>
                     Context.self,
                     DirectAction.self,
                     Main.self)
-    
-        // We also expose some useful SwiftWebResources
-        rm.expose(.init("jQuery.min.js",    jQuery.data_jquery_min_js),
-                  .init("semantic.min.js",  SemanticUI.data_semantic_min_js),
-                  .init("semantic.min.css", SemanticUI.data_semantic_min_css))
 
         // Tell SwiftObjects to use the resource manager we just created.    
         resourceManager = rm</string>
@@ -226,6 +213,63 @@ final class Application : WOApplication {</string>
     <!-- TODO: make ZeeQL an option, not a direct link -->
     <key>Options</key>
     <array>
+      <dict>
+        <key>Identifier</key>   <string>zzSemanticUI</string>
+        <key>Name</key>         <string>Include the SemanticUI and jQuery JavaScript/CSS frameworks.</string>
+        <key>Description</key>
+        <string>Add the SemanticUI and jQuery resources.</string>
+        
+        <key>SortOrder</key>    <integer>20</integer>
+        <key>Type</key>         <string>checkbox</string>
+        <key>Default</key>      <string>true</string>
+        <key>NotPersisted</key> <true/>
+        
+        <key>Units</key>
+        <dict>
+          <key>true</key>
+          <array>
+            <dict>
+              <key>Nodes</key>
+              <array>
+                <string>Package.swift:spmpackagedecl:deps:SemanticUI(url: "https://github.com/SwiftWebResources/SemanticUI-Swift.git", 
+                           from: "2.3.1")</string>
+                <string>Package.swift:spmpackagedecl:deps:jQuery(url: "https://github.com/SwiftWebResources/jQuery-Swift.git", 
+                           from: "3.3.1")</string>
+                <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
+                <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
+                
+                <string>Sources/___PACKAGENAME___/Application.swift:imports:import:jQuery</string>
+                <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SemanticUI</string>
+              </array>
+              <key>Definitions</key>
+              <dict>
+                <key>*:woappclass:init:resourcemanager</key>
+                <string>
+        // The resource manager maintains all resources, that is, templates,
+        // components, images, etc.
+        let rm = WODevResourceManager(sourceType: Application.self,
+                                      defaultFramework: "___PACKAGENAMEASIDENTIFIER___")
+        
+        // Here we need to tell the resource manager about our classes.
+        // Note: `Frame` is missing here, because it is a component w/o an 
+        //       explicit class.
+        rm.register(Session.self,
+                    Context.self,
+                    DirectAction.self,
+                    Main.self)
+    
+        // We also expose some useful SwiftWebResources
+        rm.expose(.init("jQuery.min.js",    jQuery.data_jquery_min_js),
+                  .init("semantic.min.js",  SemanticUI.data_semantic_min_js),
+                  .init("semantic.min.css", SemanticUI.data_semantic_min_css))
+
+        // Tell SwiftObjects to use the resource manager we just created.    
+        resourceManager = rm</string>
+              </dict>
+            </dict>
+          </array>
+        </dict>
+      </dict>
       <dict>
         <key>Identifier</key>   <string>zzZeeQLBridge</string>
         <key>Name</key>         <string>Include the ZeeQL module.</string>
