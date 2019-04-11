@@ -54,17 +54,11 @@
                  from: "3.3.1")</string>
       <string>Package.swift:spmpackagedecl:deps:SwiftObjects(url: "https://github.com/SwiftObjects/SwiftObjects.git", 
                  from: "0.6.1")</string>
-      <string>Package.swift:spmpackagedecl:deps:ZeeQL(url: "https://github.com/ZeeQL/ZeeQL3.git", 
-                 from: "0.7.0")</string>
-      <string>Package.swift:spmpackagedecl:deps:SwiftObjectsZeeQLBridge(url: "https://github.com/SwiftObjects/SwiftObjectsZeeQLBridge.git",
-	         from: "0.1.0")</string>
                  
       <string>Package.swift:spmpackagedecl:targets:default:NIO</string>
       <string>Package.swift:spmpackagedecl:targets:default:SemanticUI</string>
       <string>Package.swift:spmpackagedecl:targets:default:jQuery</string>
       <string>Package.swift:spmpackagedecl:targets:default:SwiftObjects</string>
-      <string>Package.swift:spmpackagedecl:targets:default:ZeeQL</string>
-      <string>Package.swift:spmpackagedecl:targets:default:SwiftObjectsZeeQLBridge</string>
       
       <string>Sources/___PACKAGENAME___/Application.swift</string>
       <string>Sources/___PACKAGENAME___/Context.swift</string>
@@ -145,6 +139,46 @@
 
     <!-- *************** OPTIONS ********************************* -->
     <!-- TODO: make ZeeQL an option, not a direct link -->
+    <key>Options</key>
+    <array>
+      <dict>
+        <key>Identifier</key>   <string>zzZeeQLBridge</string>
+        <key>Name</key>         <string>Include the ZeeQL module.</string>
+        <key>Description</key>
+        <string>Add the EOF/CoreData like ZeeQL module.</string>
+        
+        <key>SortOrder</key>    <integer>21</integer>
+        <key>Type</key>         <string>checkbox</string>
+        <key>Default</key>      <string>true</string>
+        <key>NotPersisted</key> <true/>
+        
+        <key>Units</key>
+        <dict>
+          <key>true</key>
+          <array>
+            <dict>
+              <key>Nodes</key>
+              <array>
+                <string>Package.swift:spmpackagedecl:deps:ZeeQL(url: "https://github.com/ZeeQL/ZeeQL3.git", 
+                           from: "0.7.0")</string>
+                <string>Package.swift:spmpackagedecl:deps:SwiftObjectsZeeQLBridge(url: "https://github.com/SwiftObjects/SwiftObjectsZeeQLBridge.git",
+                           from: "0.1.0")</string>
+                <string>Package.swift:spmpackagedecl:targets:default:ZeeQL</string>
+                <string>Package.swift:spmpackagedecl:targets:default:SwiftObjectsZeeQLBridge</string>
+                
+                <string>Sources/___PACKAGENAME___/main.swift:imports:import:SwiftObjectsZeeQLBridge</string>
+                
+                <string>Sources/___PACKAGENAME___/Application.swift:imports:import:ZeeQL</string>
+                <string>Sources/___PACKAGENAME___/Context.swift:imports:import:ZeeQL</string>
+                <string>Sources/___PACKAGENAME___/Session.swift:imports:import:ZeeQL</string>
+                <string>Sources/___PACKAGENAME___/Components/Main.swift:imports:import:ZeeQL</string>
+                <string>Sources/___PACKAGENAME___/DirectAction.swift:imports:import:ZeeQL</string>
+              </array>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+    </array>
 
   </dict>
 </plist>
