@@ -58,6 +58,7 @@
       <string>Sources/___PACKAGENAME___/main.swift:body:appstart</string>
       
       <string>Sources/___PACKAGENAME___/Application.swift:header</string>
+      <string>Sources/___PACKAGENAME___/Application.swift:imports:import:Foundation</string><!-- TODO: reexport -->
       <string>Sources/___PACKAGENAME___/Application.swift:imports:import:SwiftObjects</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass</string>
       <string>Sources/___PACKAGENAME___/Application.swift:woappclass:ivars</string>
@@ -336,20 +337,22 @@ final class Application : WOApplication {</string>
                   <key>Group</key><array><string>Databases</string></array>
                   <key>Path</key><string>contacts.sqlite3</string>
                 </dict>
-                <key>Sources/___PACKAGENAME___/Application.swift:woappclass:ivars:ivar:database</key>
+                <key>*:woappclass:ivars:ivar:database</key>
+                <string>    let database : Database</string>
+                <key>*:woappclass:ivars:ivar:model</key>
+                <string>    let model    : Model</string>
+                <key>*:woappclass:init:beforesuper</key>
                 <string>
-    let database : Database</string>
-              </dict>
-              <key>*:woappclass:init:beforesuper</key>
-              <string>
-        let dbPath  = "contacts.sqlite3"
-        let adaptor = SQLite3Adaptor(dbPath)
-        self.db = Database(adaptor: adaptor)
-        if let model = (try? adaptor.fetchModel())
-                             .flatMap({ FancyModelMaker(model: $0).fancyfyModel() })
-        {
-            adaptor.model = model
-        }</string>
+        let dbPath    = "contacts.sqlite3"
+        let adaptor   = SQLite3Adaptor(dbPath)
+        self.database = Database(adaptor: adaptor)
+        guard let model = try? adaptor.fetchModel() else {
+            fatalError("could not fetch model from database!")
+        }
+        self.model = FancyModelMaker(model: model).fancyfyModel()
+        adaptor.model = self.model
+        </string>
+             </dict>
             </dict>
           </array>
         </dict>
